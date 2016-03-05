@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project(project3)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g")
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+include_directories(include)
+target_link_libraries(m)
+add_executable(project3 src/main.cpp)
