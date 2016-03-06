@@ -10,7 +10,13 @@ class PrimeGenerator {
     void seive(typename std::vector<T>::iterator it) {
         for(T i : sieveOfEratosthenes) {
                 sieveOfEratosthenes.erase(std::remove_if(it, sieveOfEratosthenes.end(), [i](T t) { return t % i == 0; }), sieveOfEratosthenes.end());
-                it++;
+                while(i*i > *it) {
+                    //*it is prime, no need to test further
+                    it++;
+                    if(it == sieveOfEratosthenes.end()) {
+                        return;
+                    }
+                }
         }
     }
 public: 
@@ -31,6 +37,9 @@ public:
         }
         seive(it);
         max = newMax;
+    }
+    T getMax() const {
+        return max;
     }
 };
 
