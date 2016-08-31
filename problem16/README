@@ -1,0 +1,6 @@
+This requires GMP to be installed:
+On Ubuntu 16.04 the following packages will be required:
+libgmp10
+libgmpxx4ldbl
+libgmp-dev
+

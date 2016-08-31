@@ -1,0 +1,8 @@
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+project(project16)
+cmake_minimum_required(VERSION 2.8)
+find_package(GMP REQUIRED)
+include_directories(${GMP_INCLUDE_DIR})
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+add_executable(project16 main.cpp)
+target_link_libraries(project16 ${GMP_LIBRARIES})
