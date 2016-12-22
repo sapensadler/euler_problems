@@ -13,7 +13,7 @@ int calculateSumOfMultiples(const int multiple1, const int multiple2, const int 
 }
 
 int main() {
-    std::cout << calculateSumOfMultiples(3, 5, 1000);
+    std::cout << calculateSumOfMultiples(3, 5, 999) << std::endl;
     return 0;
 }
 

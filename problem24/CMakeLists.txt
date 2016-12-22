@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(project24)
+project(problem24)
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
-add_executable(project24 main.cpp)
+add_executable(problem24 main.cpp)
