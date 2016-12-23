@@ -1,4 +1,6 @@
 #include <iostream>
+#include <numeric>
+#include <vector>
 #include <algorithm>
 
 long long gcd(long long a, long long b) {
