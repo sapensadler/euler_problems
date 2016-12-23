@@ -27,8 +27,8 @@ int main() {
     bool isAbundantSum [maxNum * 2 + 1] = {0};
     
 
-    for(int i = 0; i < abundantNumbers.size(); i++) {
-        for(int j = i; j < abundantNumbers.size(); j++) {
+    for(unsigned int i = 0; i < abundantNumbers.size(); i++) {
+        for(unsigned int j = i; j < abundantNumbers.size(); j++) {
             isAbundantSum[abundantNumbers[i]+abundantNumbers[j]] = true;
         }
     }

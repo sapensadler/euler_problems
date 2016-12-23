@@ -25,7 +25,7 @@ int Date::getDaysInThisMonth() {
     return numDays[month-1] + (month==2 && isLeapYear()) ? 1 : 0;
 }
 
-Date::Date(int day, int month, int year, DayOfWeek dayOfWeek) : day(day), month(month), year(year), dayOfWeek(dayOfWeek) {
+Date::Date(int day, int month, int year, DayOfWeek dayOfWeek) : dayOfWeek(dayOfWeek), day(day), month(month), year(year) {
 }
 
 int Date::getDay() {
