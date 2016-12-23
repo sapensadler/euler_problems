@@ -15,7 +15,7 @@ function build_project {
 }
 
 function execute_project {
-    if [ ! -d $1/build/ ] 
+    if [ ! -e $1/build/bin/$1 ] 
     then
         build_project $1
     fi 
