@@ -9,6 +9,7 @@ long long gcd(long long a, long long b) {
         b = a % b;
         a = t;
     }
+    return a;
 }
 
 long long lcm(long long a, long long b) {
