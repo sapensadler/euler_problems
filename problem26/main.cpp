@@ -34,7 +34,7 @@ int main() {
             longest_cycle_denominator = i;
         }
     }
-    std::cout << longest_cycle_denominator << " " << max_cycle_length << std::endl;
+    std::cout << longest_cycle_denominator << std::endl;
     return 0;
 }
 

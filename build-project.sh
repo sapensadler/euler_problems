@@ -2,7 +2,10 @@
 
 function build_project {
     cd $1
-    mkdir build
+    if [ ! -d build ] 
+    then
+        mkdir build
+    fi
     if [ -e setup.sh ] 
     then
         bash ./setup.sh

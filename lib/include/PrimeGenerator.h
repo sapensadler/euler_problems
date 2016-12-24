@@ -30,7 +30,7 @@ public:
         if(newMax <= max) {
             return;
         }
-        sieveOfEratosthenes.reserve(newMax-max+sieveOfEratosthenes.size());
+        sieveOfEratosthenes.reserve(static_cast<long long>(newMax-max+sieveOfEratosthenes.size()));
         typename std::vector<T>::iterator it = sieveOfEratosthenes.end();
         for(T i = max + 1; i <= newMax; i++) {
             sieveOfEratosthenes.push_back(i);
