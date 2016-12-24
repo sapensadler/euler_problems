@@ -16,6 +16,11 @@ bool isPalindrome(int n) {
     return true;
 }
 
+/**
+  * Find the largest palindrome integer that can be expressed as the product
+  * of two three digit integers
+  */
+
 int main() {
     int largestPalindome =  0;
     for (int i = 100; i < 1000; i++) {

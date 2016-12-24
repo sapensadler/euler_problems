@@ -1,5 +1,10 @@
 #include <iostream>
 #include <vector>
+
+/**
+  * Calculate the sum of numbers that cannont be expressed as the sum of abundant numbers
+  */
+
 const int maxNum = 28123;
 
 std::vector<int> getAbundantNumbers(int max = maxNum) {
@@ -17,7 +22,7 @@ std::vector<int> getAbundantNumbers(int max = maxNum) {
         if (sum > i) {
             abundantNumbers.push_back(i);
         }
-    } 
+    }
     return abundantNumbers;
 }
 
@@ -25,19 +30,18 @@ std::vector<int> getAbundantNumbers(int max = maxNum) {
 int main() {
     std::vector<int> abundantNumbers = getAbundantNumbers();
     bool isAbundantSum [maxNum * 2 + 1] = {0};
-    
 
     for(unsigned int i = 0; i < abundantNumbers.size(); i++) {
         for(unsigned int j = i; j < abundantNumbers.size(); j++) {
             isAbundantSum[abundantNumbers[i]+abundantNumbers[j]] = true;
         }
     }
-    
+
     int sum = 0;
     for(int i = 1; i <= maxNum; i++)
         sum += isAbundantSum[i] ? 0 : i;
 
     std::cout << sum << std::endl;
-            
+
 }
 

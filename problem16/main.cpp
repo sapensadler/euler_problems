@@ -1,6 +1,11 @@
 #include <iostream>
 #include <gmpxx.h>
 
+/**
+  * First use of gmp library :D.
+  * Calculate the sum of the digits of 2^1000
+  */
+
 int main() {
     mpz_class num;
     mpz_ui_pow_ui(num.get_mpz_t(), 2, 1000);

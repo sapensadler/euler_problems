@@ -1,6 +1,10 @@
 #include <iostream>
 #include <gmpxx.h>
 
+/**
+  * Calculate the sum of the digits of 100!
+  */
+
 mpz_class factorial(mpz_class n) {
     mpz_class factorial = 1;
     while(n >= 1) {

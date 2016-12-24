@@ -1,23 +1,25 @@
 #include <iostream>
+#include <exception>
 
-void calculate(int * result) {
-    for(int i = 1; i < 999; i++) {
-        for(int j = 998 - i; i + j <= 999 && i <= j && j > 0; j--) {
-            int k = 1000 - i - j;
+/**
+  * Find a pythagorean tripple a^2 + b^2 = c^2 st a+b+c=1000
+  */
+
+long long findPythagoreanTriple() {
+    for(long long i = 1; i < 999; i++) {
+        for(long long j = 998 - i; i + j <= 999 && i <= j && j > 0; j--) {
+            long long k = 1000 - i - j;
             if(i*i + j*j == k*k) {
-                result[0] = i;
-                result[1] = j;
-                result[2] = k;
-                return;
+                return i*j*k;
             }
         }
     }
+    // Not found
+    throw new std::exception();
 }
 
 int main() {
-    int result[3];
-    calculate(result);
-    std::cout << result[0]*result[1]*result[2] << std::endl;
+    std::cout << findPythagoreanTriple() << std::endl;
     return 0;
 }
 

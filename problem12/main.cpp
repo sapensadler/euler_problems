@@ -3,7 +3,7 @@
 
 long long getNumberOfDivisors(long long n) {
     assert(n > 0);
-    
+
     if (n < 2) {
         return 1;
     }
@@ -19,10 +19,14 @@ long long getTriangleNumber(long long n) {
     return (n*(n+1))/2;
 }
 
+/**
+  *Find the smallest triangle number with at least 500 divisors
+  */
+
 int main() {
     int i = 0;
     while(getNumberOfDivisors(getTriangleNumber(++i)) < 500) ;
     std::cout << getTriangleNumber(i) << std::endl;
-    
+
 }
 

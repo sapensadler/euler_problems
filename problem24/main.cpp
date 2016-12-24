@@ -1,6 +1,9 @@
 #include <iostream>
 #include <algorithm>
-const int maxNum = 28123;
+
+/**
+  * Print the millionth lexicographical permutation of '0123456789'
+  */
 
 int main() {
     char numbers[] = { '0','1','2','3','4','5','6','7','8','9' };

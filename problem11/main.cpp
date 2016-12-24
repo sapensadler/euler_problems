@@ -2,6 +2,11 @@
 #include <fstream>
 #include <algorithm>
 
+/**
+  * Find the largest product of 4 consecutive numbers in the grid in any direction
+  * Grid is read in via file numbers.dat
+  */
+
 const int SIZE = 20;
 const int ADJACENT_NUMBERS = 4;
 
@@ -47,4 +52,4 @@ int main() {
     }
     std::cout << traverse(array) << std::endl;
 }
-    
+

@@ -6,7 +6,10 @@
 const int productLength = 13;
 
 int main() {
-    char s[] = 
+    /**
+      * Find the maximum product of 13 consecutive numbers in the number below
+      */
+    char s[] =
 "73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
 85861560789112949495459501737958331952853208805511\
@@ -29,7 +32,7 @@ int main() {
 71636269561882670428252483600823257530420752963450";
     std::vector<int> numbers(strlen(s));
     std::transform(s, s+strlen(s), numbers.begin(), [](char c) { return c - '0'; });
-    long maxProduct = 0; 
+    long maxProduct = 0;
     for(auto it = numbers.begin(); it < numbers.end() - productLength; it++) {
         long result = 1;
         for(int i = 0; i < productLength; i++) {
@@ -40,4 +43,4 @@ int main() {
     std::cout << maxProduct << std::endl;
 }
 
-        
+

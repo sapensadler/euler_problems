@@ -1,8 +1,12 @@
 #include <gmpxx.h>
 #include <iostream>
 
+/**
+  * Find the first fibonnacci number to contain more than 1000 digits
+  */
+
 int main() {
-    
+
     mpz_class fib_num = 1;
     mpz_class fib_num_next = 1;
     int i = 1;

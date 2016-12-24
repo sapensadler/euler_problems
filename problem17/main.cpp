@@ -1,6 +1,10 @@
 #include <iostream>
 #include <string>
 
+/**
+  * Calculate the number of letters the written form of all numbers between one and a thousand
+  */
+
 std::string convertZeroToTwentyToWords(int i) {
     const static std::string zeroToTwenty[] = {"zero", "one", "two", "three", "four","five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"};
     return zeroToTwenty[i];
@@ -23,7 +27,7 @@ const std::string convert0To999ToWords(int i) {
     }
     int hundreds = i / 100;
     int partSmallerThanHundred = i % 100;
-    return convertZeroToTwentyToWords(hundreds) + hundred + 
+    return convertZeroToTwentyToWords(hundreds) + hundred +
             ((partSmallerThanHundred == 0) ? std::string("") : std::string("and") + convertZeroToNinetyNineToWords(i % 100));
 }
 

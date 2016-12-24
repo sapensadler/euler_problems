@@ -1,14 +1,17 @@
 #include <iostream>
 #include <algorithm>
 #include <fstream>
+#include <array>
+
+/**
+  * Find a route from top to bottom of the triangle in triangle.txt with the highest sum
+  * Best algorithm is to go bottom to top to avoid an algorithm with exponential time complexity
+  */
 
 const int numberOfRows = 15;
 
-int** readTriangle() {
-    int **triangle = new int*[numberOfRows];
-    for(int i = 0; i < numberOfRows; i++) {
-        triangle[i] = new int[numberOfRows];
-    }
+std::array<std::array<int, numberOfRows>, numberOfRows> readTriangle() {
+    std::array<std::array<int, numberOfRows>, numberOfRows> triangle {0};
     std::ifstream triangleFile;
     triangleFile.open("triangle.txt");
     int row = 0 , col = 0;
@@ -23,8 +26,8 @@ int** readTriangle() {
     return triangle;
 }
 
-int findMaxSum(int** triangle) {
-    int maxSum[numberOfRows][numberOfRows] = {0};
+int findMaxSum(std::array<std::array<int, numberOfRows>, numberOfRows> triangle) {
+    std::array<std::array<int, numberOfRows>, numberOfRows> maxSum = {0};
     for(int i =0 ; i < numberOfRows; i++) {
         maxSum[numberOfRows - 1][i] = triangle[numberOfRows-1][i];
     }
@@ -38,11 +41,7 @@ int findMaxSum(int** triangle) {
 
 
 int main() {
-    int** triangle = readTriangle();
+    std::array<std::array<int, numberOfRows>, numberOfRows> triangle = readTriangle();
     std::cout << findMaxSum(triangle) << std::endl;
-    for(int i = 0; i < numberOfRows; i++) {
-        delete[] triangle[i];
-    }
-    delete[] triangle;
 }
 

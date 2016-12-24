@@ -1,6 +1,10 @@
 #include <iostream>
 #include <algorithm>
 
+/**
+  * Returns the sum of all amicable pairs under 1000
+  */
+
 int sumOfProperDivisors(int x) {
     int sum = 0;
     for(int i = 1; i < x; i++) {

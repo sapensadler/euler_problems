@@ -2,6 +2,11 @@
 #include <iostream>
 #include <string>
 
+/**
+  * for d = 1 .. 1000 find d such that 1/d has the longest recurring cycle in it's decimal part
+  * We use the fact that the longest recurring cycle length of 1/d is the same as expressing the
+  * multiplicated order of d after removing factors of 2 and 5.
+  */
 int ten_pow_mod_denom(int pow, int denominator) {
     int result = 1;
     for(int i = 0; i < pow; i++) {
@@ -12,16 +17,16 @@ int ten_pow_mod_denom(int pow, int denominator) {
 
 
 int get_cycle_length(int denominator) {
-        int remainder = -1;
-        int count = 1;
-        while (denominator % 2 == 0)
-            denominator /= 2;
-        while (denominator % 5 == 0) 
-            denominator /= 5;
-        while(remainder != 0 && remainder != 1) {
-            remainder = ten_pow_mod_denom(count++, denominator);
-        }
-    return remainder ? count-1 : 0;
+    int remainder = -1;
+    int count = 0;
+    while (denominator % 2 == 0)
+        denominator /= 2;
+    while (denominator % 5 == 0)
+        denominator /= 5;
+    while(remainder != 0 && remainder != 1) {
+        remainder = ten_pow_mod_denom(++count, denominator);
+    }
+    return remainder ? count : 0;
 }
 
 int main() {

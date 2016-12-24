@@ -5,6 +5,11 @@
 #include <vector>
 #include <iostream>
 
+/**
+  * Score names based on the product of the position in the file and
+  *  the sum of the character values in the name
+  */
+
 int calculateNameScore(std::string name) {
     int score = 0;
     for(char c : name) {
@@ -13,12 +18,17 @@ int calculateNameScore(std::string name) {
     return score;
 }
 
-struct colons_and_quotes_are_space : std::ctype<char> {
-    colons_and_quotes_are_space() : std::ctype<char>(get_table()) {}
+/**
+  * This struct is used to change the default string separator to include
+  * comma, spaces and quotes
+  */
+
+struct comma_and_quotes_are_space : std::ctype<char> {
+    comma_and_quotes_are_space() : std::ctype<char>(get_table()) {}
     static mask const* get_table()
     {
         static mask rc[table_size];
-        rc[':'] = std::ctype_base::space;
+        rc[' '] = std::ctype_base::space;
         rc[','] = std::ctype_base::space;
         rc['"'] = std::ctype_base::space;
         rc['\n'] = std::ctype_base::space;
@@ -28,7 +38,7 @@ struct colons_and_quotes_are_space : std::ctype<char> {
 
 void readNames(std::ifstream& namesFile, std::vector<std::string>& names) {
 
-    colons_and_quotes_are_space* type = new colons_and_quotes_are_space;
+    comma_and_quotes_are_space* type = new comma_and_quotes_are_space;
     namesFile.imbue(std::locale(std::cin.getloc(), type));
     std::string name;
     while(namesFile >> name) {

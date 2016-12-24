@@ -3,11 +3,11 @@
 #include <iostream>
 
 bool isPrime(PrimeGenerator<long long>& pg, long long num) {
-    pg.increaseMax(num);
+    pg.setMax(num);
     return std::find(pg.getPrimes().begin(), pg.getPrimes().end(), num) != pg.getPrimes().end();
 }
 
-/** 
+/**
   * Returns the number of consecutive primes n^2 + a*n + b produces for n = 0,1...
   */
 long long generatePrimesLength(PrimeGenerator<long long>& pg, long long a, long long b) {
@@ -18,8 +18,12 @@ long long generatePrimesLength(PrimeGenerator<long long>& pg, long long a, long 
     return n;
 }
 
+/**
+  * Find a,b in [-1000, 1000] which generates the longest interval [0,n] st n^2 + an +b is prime
+  */
+
 int main() {
-    PrimeGenerator<long long> pg(1000); 
+    PrimeGenerator<long long> pg(1000);
     std::vector<long long> b_range(pg.getPrimes());
     long long max_primes_length = 0;
     long long max_a = 0;
