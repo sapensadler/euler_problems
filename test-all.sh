@@ -7,9 +7,9 @@ do
     result=$(bash run-project.sh $project | awk '{print $4}')
     if [ $result -eq $correct_result ]
     then
-        echo PASS $project expected: $correct_result actual: $result
+        echo -e "\e[32mPASS $project \e[39mexpected: $correct_result actual: $result"
     else
-        echo FAIL $project expected: $correct_result actual: $result
+        echo -e "\e[31mFAIL $project \e[39mexpected: $correct_result actual: $result"
     fi
 done < results.txt
 
