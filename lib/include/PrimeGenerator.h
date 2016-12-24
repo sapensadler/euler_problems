@@ -17,6 +17,10 @@ class PrimeGenerator {
                         return;
                     }
                 }
+                // If all extra elements have been removed due to not being prime end
+                if(it == sieveOfEratosthenes.end()) {
+                    return;
+                }
         }
     }
 public: 
