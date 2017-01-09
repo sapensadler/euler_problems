@@ -1,4 +1,3 @@
-#include <gmpxx.h>
 #include "PrimeGenerator.h"
 #include <iostream>
 
