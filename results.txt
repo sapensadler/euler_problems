@@ -25,3 +25,4 @@ Running problem24 	:	 2783915460
 Running problem25 	:	 4782
 Running problem26 	:	 983
 Running problem27 	:	 -59231
+Running problem28	:	 669171001
