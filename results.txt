@@ -28,3 +28,4 @@ Running problem27	:	-59231
 Running problem28	:	669171001
 Running problem29	:	9183
 Running problem30   :	443839  
+Running problem31   :	73682
