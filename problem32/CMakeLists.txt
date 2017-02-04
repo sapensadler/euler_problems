@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project(problem32)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Werror -O3 -Wall -Wextra")
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+add_executable(problem32 main.cpp)
