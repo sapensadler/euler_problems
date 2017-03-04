@@ -5,8 +5,8 @@
 /**
   *  Finds the largest prime factor of number
   */
-const long number = 600851475143;
-const long max_prime_factor = sqrt(number);
+const long long number = 600851475143;
+const long long max_prime_factor = sqrt(number);
 
 int main() {
     // Generate primes up to the sqrt of number

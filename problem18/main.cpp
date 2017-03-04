@@ -14,6 +14,10 @@ std::array<std::array<int, numberOfRows>, numberOfRows> readTriangle() {
     std::array<std::array<int, numberOfRows>, numberOfRows> triangle {0};
     std::ifstream triangleFile;
     triangleFile.open("triangle.txt");
+    if(triangleFile.fail()) {
+        std::cout << "Unable to open triangle file" << std::endl;
+        std::exit(1);
+    }
     int row = 0 , col = 0;
     while(row < numberOfRows) {
         col = 0;

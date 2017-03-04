@@ -45,6 +45,10 @@ long long traverse(long long array[SIZE][SIZE]) {
 int main() {
     long long array[SIZE][SIZE];
     std::ifstream numbersFile("numbers.dat");
+    if(numbersFile.fail()) {
+        std::cout << "Unable to open file" << std::endl;
+        std::exit(1);
+    }
     for(int i = 0; i < SIZE; i++) {
         for(int j = 0; j < SIZE; j++) {
             numbersFile >> array[i][j];

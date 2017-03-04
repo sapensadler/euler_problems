@@ -21,6 +21,10 @@ long long readNextNumber(std::ifstream& inputFile) {
 
 int main() {
     std::ifstream inFile("numbers.dat");
+    if(inFile.fail()) {
+        std::cout << "Unable to open data file" << std::endl;
+        std::exit(1);
+    }
     long long value = 1;
     while (inFile) {
        value = (value + readNextNumber(inFile));

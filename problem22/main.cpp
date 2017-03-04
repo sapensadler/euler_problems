@@ -50,6 +50,10 @@ void readNames(std::ifstream& namesFile, std::vector<std::string>& names) {
 int main() {
     std::ifstream namesFile;
     namesFile.open("names.txt");
+    if(namesFile.fail()) {
+        std::cout << "Unable to open names file" << std::endl;
+        std::exit(1);
+    }
     std::vector<std::string> names;
     readNames(namesFile, names);
     namesFile.close();

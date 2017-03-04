@@ -19,7 +19,7 @@ int main() {
             numbers.insert(a_exp_b);
         }
     }
-    std::cout << numbers.size();
+    std::cout << numbers.size() << std::endl;
 
     return 0;
 }
