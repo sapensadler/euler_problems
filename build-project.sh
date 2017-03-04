@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Builds project using cmake using command line arguments for the project name
+
 function build_project {
     cd $1
     if [ ! -d build ] 
@@ -13,7 +15,6 @@ function build_project {
     cd build 
     cmake .. 
     make 
-    cd ../../
 }
 
 build_project $1

@@ -1,3 +1,5 @@
+#! /bin/bash
+# Cleans build directories for each project
 
 function clean_project {
     if [  -d $1/build/ ] 
