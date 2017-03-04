@@ -30,3 +30,4 @@ Result problem29	:	9183
 Result problem30	:	443839
 Result problem31	:	73682
 Result problem32	:	45228
+Result problem33	:	100

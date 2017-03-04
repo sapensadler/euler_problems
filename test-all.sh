@@ -1,12 +1,9 @@
 #!/bin/bash
 
 # Build all projects
-echo building
 bash build-all.sh $@
 tmp_file=$(mktemp)
-echo running
 bash run-all.sh $@ > $tmp_file
-echo run complete
 
 
 # Run the projects and check results
