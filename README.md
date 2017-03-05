@@ -17,5 +17,7 @@ Examples
     $ ./build-all.sh --concurrent -DCMAKE_BUILD_TYPE=Debug
     $ ./test-all.sh 
     $ ./test-all.sh --concurrent -DCMAKE_BUILD_TYPE=Release
-    $ ./build-and-run-project.sh
+    $ ./build-and-run-project.sh problem1
     $ ./build-and-run-project.sh problem1 -DCMAKE_BUILD_TYPE=Release
+    $ ./run-project problem1
+    $ ./clean-all.sh

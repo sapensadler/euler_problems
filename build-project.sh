@@ -13,7 +13,6 @@ function build_project {
         bash ./setup.sh
     fi
     cd build 
-    echo Building $1 with arguments $2 1>&2
     cmake $2 .. 
     make 
 }
