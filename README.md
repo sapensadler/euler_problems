@@ -9,3 +9,13 @@ The build-all scripts take an optional argument of --concurrent or --consecutive
 Use the run-all.sh and run-project.sh problem<xx> to execute the problems.
 
 Build scripts have an optional second argument for CMAKE e.c -DCMAKE_BUILD_TYPE=Debug which will be passed. --concurrent or --consecutive must go BEFORE the CMAKE option.
+
+Examples
+
+    $ ./build-all.sh
+    $ ./build-all.sh --concurrent
+    $ ./build-all.sh --concurrent -DCMAKE_BUILD_TYPE=Debug
+    $ ./test-all.sh 
+    $ ./test-all.sh --concurrent -DCMAKE_BUILD_TYPE=Release
+    $ ./build-and-run-project.sh
+    $ ./build-and-run-project.sh problem1 -DCMAKE_BUILD_TYPE=Release
