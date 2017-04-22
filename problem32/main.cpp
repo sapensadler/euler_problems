@@ -2,6 +2,7 @@
 #include <string>
 #include <set>
 #include <algorithm>
+#include <numeric>
 
 std::string digits = "123456789";
 
