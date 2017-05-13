@@ -38,6 +38,12 @@ public:
     const std::vector<T>& getPrimes() const {
         return sieveOfEratosthenes;
     }
+    static bool isPrime(T n) {
+        static PrimeGenerator<T> pg;
+        pg.setMax(n);
+        return std::find(pg.getPrimes().begin(),pg.getPrimes().end(), n) != pg.getPrimes().end();
+
+    }
     void setMax(T newMax) {
         if(newMax <= max) {
             return;
