@@ -3,11 +3,11 @@
 #include <cmath>
 #include "PrimeGenerator.h"
 
-/**
-  *  Finds the largest prime factor of number
-  */
 const long long max = 1000000;
 
+/**
+  * Rotate a number n. E.g. 197 becomes 719.
+  */
 long long rotateNumber(long long n) {
     if(n < 10) {
         return n;
@@ -19,6 +19,11 @@ long long rotateNumber(long long n) {
     return n + lastDigit * std::pow(10, std::ceil(std::log10(n)));
 }
 
+/**
+  * Count the number of circular primes below max (1000000). 
+  * A circular prime is a number, for which all its rotations are prime
+  * e.g. 197 is prime as well as its rotations 719 and 971.
+  */
 int main() {
     // Generate primes up to the sqrt of number
     PrimeGenerator<long long> p(max);
@@ -27,18 +32,20 @@ int main() {
     for(auto it = primes.begin(); it != primes.end(); it++ ) {
         long long n = *it;
         long long rotation = rotateNumber(n);
-        bool flag = true;
-        while(n != rotation && flag) {
+        bool isRotatablePrime = true;
+        // Check if this primes rotations are also prime
+        while(n != rotation && isRotatablePrime) {
             if(std::find(primes.begin(), primes.end(), rotation) == primes.end()) {
-            flag = false;
+            isRotatablePrime = false;
             } else {
                 rotation = rotateNumber(rotation);
             }
         }
-        if (flag) {
+        if (isRotatablePrime) {
             count++;
             primes.erase(std::remove(primes.begin(), primes.end(), rotation), primes.end());
             rotation = rotateNumber(rotation);
+            // Remove all rotations from the prime list and count them
             while(n != rotation) {
                 primes.erase(std::remove(primes.begin(), primes.end(), rotation), primes.end());
                 rotation = rotateNumber(rotation);
