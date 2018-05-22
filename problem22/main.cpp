@@ -37,14 +37,10 @@ struct comma_and_quotes_are_space : std::ctype<char> {
 };
 
 void readNames(std::ifstream& namesFile, std::vector<std::string>& names) {
-
-    comma_and_quotes_are_space* type = new comma_and_quotes_are_space;
-    namesFile.imbue(std::locale(std::cin.getloc(), type));
     std::string name;
     while(namesFile >> name) {
         names.push_back(name);
     }
-    delete type;
 }
 
 int main() {
@@ -54,6 +50,10 @@ int main() {
         std::cout << "Unable to open names file" << std::endl;
         std::exit(1);
     }
+    // DO NOT FREE the locale pointer. It is freed by the standard library, in the destructor
+    // WIERD!!!! https://stackoverflow.com/a/7304184/3168708
+    // See also http://en.cppreference.com/w/cpp/locale/locale/locale
+    namesFile.imbue(std::locale(std::cin.getloc(), new comma_and_quotes_are_space));
     std::vector<std::string> names;
     readNames(namesFile, names);
     namesFile.close();
