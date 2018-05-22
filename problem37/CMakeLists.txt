@@ -7,7 +7,7 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -Werror -Wall -Wextra -O3")
 set(Boost_USE_STATIC_LIBS OFF) 
 set(Boost_USE_MULTITHREADED ON)  
 set(Boost_USE_STATIC_RUNTIME OFF) 
-find_package(Boost 1.45.0 COMPONENTS ) 
+find_package(Boost COMPONENTS ) 
 
 if(Boost_FOUND)
     add_executable(problem37 main.cpp)
