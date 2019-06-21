@@ -36,3 +36,4 @@ Result problem35	:	55
 Result problem36	:	872187	
 Result problem37	:	748317	
 Result problem38	:	932718654
+Result problem39	:	840
